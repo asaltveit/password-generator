@@ -103,7 +103,6 @@ generator = PasswordGenerator(
 )
 
 password = generator.generate(length=20)
-password = generator.generate(length=20)
 passwords = generator.generate_multiple(count=5, length=16)
 
 # Using predefined symbol sets
@@ -133,6 +132,37 @@ Different systems have varying requirements for special characters. This generat
 - **alphanumeric-only**: No symbols (use with `--no-symbols` instead)
 
 You can also specify a custom symbol set using `--custom-symbols` followed by the exact characters you want to allow.
+
+## Testing
+
+The project includes comprehensive unit and integration tests. To run the tests:
+
+```bash
+# Run all tests
+python -m unittest discover -s tests -p "test_*.py" -v
+
+# Run unit tests only
+python -m unittest tests.test_password_generator -v
+
+# Run integration tests only
+python -m unittest tests.test_cli -v
+```
+
+*Note: On Mac/Linux, use `python3` instead of `python` if needed.*
+
+The test suite includes:
+- **Unit tests**: Test the `PasswordGenerator` class and helper functions
+  - Password generation with various configurations
+  - Character variety guarantees
+  - Symbol set validation
+  - Error handling
+  - Edge cases
+
+- **Integration tests**: Test the CLI interface
+  - Command-line argument parsing
+  - Output validation
+  - Error message handling
+  - Combined options
 
 ## Security Notes
 
@@ -191,4 +221,3 @@ python cli.py -l 16 --custom-symbols '!@#$%'
 # List available symbol sets
 python cli.py --list-symbol-sets
 ```
-

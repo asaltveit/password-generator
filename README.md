@@ -18,6 +18,20 @@ A secure password generator for online accounts using Python's `secrets` module 
 
 No external dependencies required! This uses only Python's standard library (Python 3.6+).
 
+### Quick Start
+
+1. Download or clone this repository
+2. Open a terminal/command prompt
+3. Navigate to the project directory
+4. Run the generator:
+   - **Windows**: `python cli.py` or `py cli.py`
+   - **Mac/Linux**: `python3 cli.py`
+
+**Note on Python commands:**
+- On **Windows**: Use `python` or `py` (e.g., `python cli.py` or `py cli.py`)
+- On **Mac/Linux**: Use `python3` (e.g., `python3 cli.py`)
+- If `python` works on your system, you can use it instead of `python3`
+
 ## Usage
 
 ### Command Line
@@ -26,6 +40,7 @@ Basic usage (generates a 16-character password):
 ```bash
 python cli.py
 ```
+*Note: On Mac/Linux, you may need to use `python3 cli.py` instead of `python cli.py`*
 
 Generate a password of specific length:
 ```bash
@@ -143,6 +158,8 @@ You can also specify a custom symbol set using `--custom-symbols` followed by th
 
 ## Examples
 
+*Note: On Mac/Linux, replace `python` with `python3` if needed. On Windows, you can also use `py`.*
+
 ```bash
 # Default 16-character password
 python cli.py
@@ -166,7 +183,10 @@ python cli.py -l 16 --symbol-set common
 python cli.py -l 16 --symbol-set no-exclamation
 
 # Custom symbol set (only specific characters)
+# Windows: Use double quotes or escape quotes
 python cli.py -l 16 --custom-symbols "!@#$%"
+# Mac/Linux: Single or double quotes work
+python cli.py -l 16 --custom-symbols '!@#$%'
 
 # List available symbol sets
 python cli.py --list-symbol-sets
